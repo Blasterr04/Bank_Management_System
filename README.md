@@ -82,67 +82,61 @@ The **Bank Management System** project is a comprehensive solution to manage and
    SELECT * FROM clients;
    ```
 
-3.**Data Analysis (Python - Google Colab / Jupyter Notebook) 🐍**
+3. **Data Analysis (Python - Google Colab / Jupyter Notebook) 🐍**
+   -Data imported from PostgreSQL into Python using `psycopg2` and `pandas`.
+   -Performed exploratory data analysis (EDA), cleaning, and preprocessing.
+   -Example code snippet:
+   ```python
+   import pandas as pd
+   import psycopg2
+   
+   conn = psycopg2.connect(
+       dbname="bankdb", 
+       user="username", 
+       password="password", 
+       host="localhost", 
+       port="5432"
+   )
+   
+   query = "SELECT * FROM Clients;"
+   df = pd.read_sql(query, conn)
+   print(df.head())
+   ```
+4. **Analyses Performed** 
+   - Customer segmentation by **income bands**
+   - Calculation of **total deposits, loans, and fees**
+   - Engagement metrics such as **customer retention duration**
 
-Data imported from PostgreSQL into Python using `psycopg2` and `pandas`.
+5. **Dashboard Creation 📊 (Power BI)**
+   -Connected Power BI directly to the PostgreSQL database
+   -Created new calculated columns using **DAX**:
 
-Performed exploratory data analysis (EDA), cleaning, and preprocessing.
-
-**Example code snippet:**
-
-```python
-import pandas as pd
-import psycopg2
-
-conn = psycopg2.connect(
-    dbname="bankdb", 
-    user="username", 
-    password="password", 
-    host="localhost", 
-    port="5432"
-)
-
-query = "SELECT * FROM Clients;"
-df = pd.read_sql(query, conn)
-print(df.head())
-```
-## Analyses Performed & Dashboard Creation 📊
-
-**Analyses performed include:**
-- Customer segmentation by **income bands**
-- Calculation of **total deposits, loans, and fees**
-- Engagement metrics such as **customer retention duration**
-
-4. **Dashboard Creation (Power BI)**
-
-Connected Power BI directly to the PostgreSQL database and created new calculated columns using **DAX**:
-
-```DAX
-Processing Fees = 
-SWITCH('Clients - Banking'[Fee Structure],
-"High",0.05,
-"Mid" ,0.03,
-"Low" , 0.01 , 0
-)
-
-Income Band = 
-SWITCH(TRUE(),
-'Clients - Banking'[Estimated Income] < 100000,"Low",
-'Clients - Banking'[Estimated Income] < 300000,"Mid",
-"High" )
-
-Engagment Days = 
-DATEDIFF('Clients - Banking'[Joined Bank],TODAY(), DAY )
-
-Engagement Timeframe = 
-SWITCH(TRUE(),
-'Clients - Banking'[Engagment Days] < 365 , "< 1 Years",
-'Clients - Banking'[Engagment Days] < 1825 , "< 5 Years",
-'Clients - Banking'[Engagment Days] < 3650 , "< 10 Years",
-'Clients - Banking'[Engagment Days] < 7300 , "< 20 Years",
-"> 20 Years")
-```
-## Key Measures Created in Power BI 📊
+   ```DAX
+   Processing Fees = 
+   SWITCH('Clients - Banking'[Fee Structure],
+   "High",0.05,
+   "Mid" ,0.03,
+   "Low" , 0.01 , 0
+   )
+   
+   Income Band = 
+   SWITCH(TRUE(),
+   'Clients - Banking'[Estimated Income] < 100000,"Low",
+   'Clients - Banking'[Estimated Income] < 300000,"Mid",
+   "High" )
+   
+   Engagment Days = 
+   DATEDIFF('Clients - Banking'[Joined Bank],TODAY(), DAY )
+   
+   Engagement Timeframe = 
+   SWITCH(TRUE(),
+   'Clients - Banking'[Engagment Days] < 365 , "< 1 Years",
+   'Clients - Banking'[Engagment Days] < 1825 , "< 5 Years",
+   'Clients - Banking'[Engagment Days] < 3650 , "< 10 Years",
+   'Clients - Banking'[Engagment Days] < 7300 , "< 20 Years",
+   "> 20 Years")
+   ```
+### Key Measures Created in Power BI 📊
 
 ```DAX
 Total loan = SUM('Clients - Banking'[Bank Loans]) + 
@@ -215,9 +209,11 @@ Engagement Length = SUM('Clients - Banking'[Engagment Days])
 ---
 ## 🔹 Author  
 👤 **Priyanshu Singh**  
-- 🎓 IIT Ropar | Mechanical Engineering  
-- 🔧 Skills: Abaqus, SolidWorks, OpenFOAM, Fusion, Ansys, Arduino IDE, Linux  
+- 🎓 Final Year Mechanical Engineering Student at IIT Ropar  
+- 📊 Passionate about Data Science, Business Analytics & Product Analysis  
+- 🎥 Content Creator: [The Unfiltered Guyy](https://youtube.com/@theunfilteredguyy)  
+- 🔧 Technical Skills: SQL, Python, Power BI, Tableau, Excel, Product Management, A/B Testing, Data Visualization  
 - 📧 Email: priyanshusingh04112003@gmail.com  
-- 🌐 [LinkedIn](https://www.linkedin.com/in/priyanshu-singh-a47033265) | [YouTube](https://youtube.com/@theunfilteredguyy)  
+- 🌐 [LinkedIn](https://www.linkedin.com/in/priyanshu-singh-a47033265) | [YouTube](https://youtube.com/@theunfilteredguyy)
 
 ---
