@@ -199,11 +199,14 @@ Engagement Length = SUM('Clients - Banking'[Engagment Days])
 
 ## 📂 Project Files
 
-- `Clients.xlsx` → Raw Excel data  
 - `SQL_Queries.sql` → PostgreSQL table creation and sample queries  
 - `Data_Analysis.ipynb` → Python analysis notebook  
-- `PowerBI_Dashboard.pbix` → Final dashboard template  
-- `Project_Report.pdf` → Detailed report with visuals and explanations
+- `Banking_Management_Dashboard.pdf` → Final Power BI dashboard (exported template)  
+- `Banking-Relationships.csv` → Banking relationship dataset  
+- `Clients-Banking.csv` → Client loan and deposit details  
+- `Gender.csv` → Gender distribution dataset  
+- `Investment_Advisor.csv` → Investment advisor assignment data  
+- `Combined.xlsx` → All four datasets merged into a single workbook  
   
 ---
 
