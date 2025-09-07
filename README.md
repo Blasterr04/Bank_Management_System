@@ -17,8 +17,8 @@ The system processes client banking information to generate valuable insights fo
 
 | Technology | Purpose | Version |
 |------------|---------|---------|
-| Microsoft Excel | Data Storage & Preparation | 365+ |
-| PostgreSQL | Database Management | 12+ |
+| Microsoft Excel | Data Storage & Preparation | 2508 |
+| PostgreSQL | Database Management | 17 |
 | Python | Data Analysis & Processing | 3.8+ |
 | Google Colab/Jupyter | Development Environment | - |
 | Power BI | Data Visualization | Desktop |
@@ -83,9 +83,9 @@ The **Bank Management System** project is a comprehensive solution to manage and
    ```
 
 3. **Data Analysis (Python - Google Colab / Jupyter Notebook) 🐍**
-   -Data imported from PostgreSQL into Python using `psycopg2` and `pandas`.
-   -Performed exploratory data analysis (EDA), cleaning, and preprocessing.
-   -Example code snippet:
+   - Data imported from PostgreSQL into Python using `psycopg2` and `pandas`.
+   - Performed exploratory data analysis (EDA), cleaning, and preprocessing.
+   - Example code snippet:
    ```python
    import pandas as pd
    import psycopg2
@@ -108,8 +108,8 @@ The **Bank Management System** project is a comprehensive solution to manage and
    - Engagement metrics such as **customer retention duration**
 
 5. **Dashboard Creation 📊 (Power BI)**
-   -Connected Power BI directly to the PostgreSQL database
-   -Created new calculated columns using **DAX**:
+   - Connected Power BI directly to the PostgreSQL database
+   - Created new calculated columns using **DAX**:
 
    ```DAX
    Processing Fees = 
@@ -136,8 +136,7 @@ The **Bank Management System** project is a comprehensive solution to manage and
    'Clients - Banking'[Engagment Days] < 7300 , "< 20 Years",
    "> 20 Years")
    ```
-### Key Measures Created in Power BI 📊
-
+**Key Measures Created in Power BI 📊**
 ```DAX
 Total loan = SUM('Clients - Banking'[Bank Loans]) + 
              SUM('Clients - Banking'[Business Lending]) + 
@@ -205,13 +204,13 @@ Engagement Length = SUM('Clients - Banking'[Engagment Days])
 - `Data_Analysis.ipynb` → Python analysis notebook  
 - `PowerBI_Dashboard.pbix` → Final dashboard template  
 - `Project_Report.pdf` → Detailed report with visuals and explanations
-- 
+  
 ---
+
 ## 🔹 Author  
 👤 **Priyanshu Singh**  
 - 🎓 Final Year Mechanical Engineering Student at IIT Ropar  
 - 📊 Passionate about Data Science, Business Analytics & Product Analysis  
-- 🎥 Content Creator: [The Unfiltered Guyy](https://youtube.com/@theunfilteredguyy)  
 - 🔧 Technical Skills: SQL, Python, Power BI, Tableau, Excel, Product Management, A/B Testing, Data Visualization  
 - 📧 Email: priyanshusingh04112003@gmail.com  
 - 🌐 [LinkedIn](https://www.linkedin.com/in/priyanshu-singh-a47033265) | [YouTube](https://youtube.com/@theunfilteredguyy)
